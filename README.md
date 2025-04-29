@@ -226,58 +226,6 @@ For support or questions, please contact the project maintainers.
 # CRM MVP Architecture with AI Integration
 
 ## System Overview
-┌───────────────────────────────────────────────────────────────────────────────┐
-│                            CRM MVP Architecture                              │
-├───────────────────────────┬───────────────────────────────────────────────────┤
-│       Frontend            │                Backend                            │
-│  (Vue.js + Inertia.js)    │            (Laravel + PHP)                       │
-│                           │                                                   │
-│  ┌─────────────────────┐  │  ┌─────────────────────────────────────────────┐  │
-│  │     Components      │  │  │               Controllers                   │  │
-│  │ - AppLayout.vue     │  │  │ - AuthController                            │  │
-│  │ - AppSidebar.vue    │  │  │ - LeadController                            │  │
-│  │ - AppHeader.vue     │  │  │ - AdvisorController                         │  │
-│  │ - LeadStatusBadge.vue│  │  │ - AIController                             │  │
-│  └─────────┬───────────┘  │  └───────────────┬─────────────────────────────┘  │
-│            │               │                  │                                │
-│  ┌─────────▼───────────┐  │  ┌───────────────▼─────────────────────────────┐  │
-│  │       Pages         │  │  │               Services                      │  │
-│  │ - Auth/Login.vue    │  │  │ - PolicyDocumentService                     │  │
-│  │ - Dashboard.vue     │  │  │ - OpenAIService                             │  │
-│  │ - Leads/Index.vue   │  │  │ - DeepSeekService                           │  │
-│  │ - Leads/Show.vue    │  │  │ - AIServiceFactory                          │  │
-│  │ - AI/PolicyAssistant.vue│ └───────────────┬─────────────────────────────┘  │
-│  └─────────────────────┘  │                  │                                │
-│                           │  ┌───────────────▼─────────────────────────────┐  │
-│  Tailwind CSS             │  │               Repositories                  │  │
-│  (Styling System)         │  │ - LeadRepository                            │  │
-│                           │  │ - UserRepository                            │  │
-│                           │  └───────────────┬─────────────────────────────┘  │
-│                           │                  │                                │
-│                           │  ┌───────────────▼─────────────────────────────┐  │
-│                           │  │               Models                        │  │
-│                           │  │ - User                                      │  │
-│                           │  │ - Lead                                      │  │
-│                           │  │ - PolicyDocument                            │  │
-│                           │  │ - LeadNote                                  │  │
-│                           │  └───────────────┬─────────────────────────────┘  │
-│                           │                  │                                │
-│                           │  ┌───────────────▼─────────────────────────────┐  │
-│                           │  │               Database                      │  │
-│                           │  │ - MySQL                                     │  │
-│                           │  └─────────────────────────────────────────────┘  │
-├───────────────────────────┼───────────────────────────────────────────────────┤
-│        AI Services        │             Python API                            │
-│                           │  (FastAPI + Sentence Transformers)               │
-│  ┌─────────────────────┐  │  ┌─────────────────────────────────────────────┐  │
-│  │   OpenAI Service    │  │  │ - Document Embeddings                        │  │
-│  └─────────┬───────────┘  │  │ - Semantic Search                           │  │
-│            │               │  │ - RAG Implementation                        │  │
-│  ┌─────────▼───────────┐  │  └─────────────────────────────────────────────┘  │
-│  │   DeepSeek Service  │  │                                                   │
-│  └─────────────────────┘  │                                                   │
-└───────────────────────────┴───────────────────────────────────────────────────┘
-```
 
 ## Architecture Components
 
